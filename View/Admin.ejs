@@ -1,0 +1,10 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Admin</title>
+<style>body{background:#0f172a;color:#e2e8f0;font-family:system-ui;padding:20px;margin:0}
+.card{background:#1e293b;padding:24px;border-radius:16px;width:min(700px,100%);margin:0 auto}input,button{width:100%;padding:12px;margin-top:8px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:#e2e8f0}
+button{background:#38bdf8;color:#0b1220;font-weight:700;border:0;cursor:pointer}.btn-danger{background:#ef4444;color:#fff;width:auto;padding:8px 12px}
+table{width:100%;margin-top:16px}td{padding:12px;border-bottom:1px solid #334155}.row{display:flex;justify-content:space-between;align-items:center}.error{color:#f87171}</style></head>
+<body><div class="card">
+<div class="row"><h2>Admin</h2><a href="/"><button style="background:#a855f7;width:auto">Back</button></a></div>
+<h3>Create User</h3><% if(error){ %><p class="error"><%= error %></p><% } %>
+<form method="POST" action="/admin/create"><input name="username" placeholder="Username" required><input name="password" type="password" placeholder="Password" required><button>Create</button></form>
+<h3>Users</h3><table><% users.forEach(u=>{ %><tr><td><%= u.username %></td><td style="text-align:right"><form method="POST" action="/admin/delete/<%= u.id %>" style="margin:0"><button class="btn-danger" onclick="return confirm('Delete?')">Delete</button></form></td></tr><% }) %></table></div></body></html>
