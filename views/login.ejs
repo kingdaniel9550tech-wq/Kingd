@@ -1,0 +1,6 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login</title>
+<style>body{background:#0f172a;color:#e2e8f0;font-family:system-ui;display:grid;place-items:center;min-height:100vh;margin:0;padding:16px}
+.card{background:#1e293b;padding:28px;border-radius:16px;width:100%;max-width:360px}input,button{width:100%;padding:12px;margin-top:10px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:#e2e8f0;font-size:16px}
+button{background:#38bdf8;color:#0b1220;font-weight:700;border:0;cursor:pointer}.error{color:#f87171;font-size:14px}</style></head>
+<body><div class="card"><h2>Login</h2><% if(error){ %><p class="error"><%= error %></p><% } %>
+<form method="POST"><input name="username" placeholder="Username" required><input name="password" type="password" placeholder="Password" required><button>Login</button></form></div></body></html>
